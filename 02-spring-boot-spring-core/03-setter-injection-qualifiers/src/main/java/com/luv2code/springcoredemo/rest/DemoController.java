@@ -12,13 +12,15 @@ public class DemoController {
     private Coach myCoach;
 
    @Autowired
-   //setter method
-   public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+   //constructor
+   public DemoController(@Qualifier("cricketCoach") Coach theCoach)
+   {
        myCoach= theCoach;
    }
 
     @GetMapping("/dailyworkout")
-    public String getDailyWorkout(){
+    public String getDailyWorkout()
+    {
         return myCoach.getDailyWorkout();
     }
 
